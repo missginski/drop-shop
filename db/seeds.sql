@@ -1,14 +1,13 @@
-INSERT INTO users
-  (fname, lname, email, location)
-VALUES
-  ('Kristyn', 'Cornett', 'missginski@gmail.com', 'New York'),
-  ('Andrew', 'Cornett', 'bmxposer@gmail.com' 'New York'),
+INSERT INTO users (email, password_digest, email, location)
+VALUES ('Kristyn', 'Cornett', 'missginski@gmail.com', 'New York');
 
+INSERT INTO users (fname, lname, email, location)
+VALUES
+('Andrew', 'Cornett', 'bmxposer@gmail.com' 'New York');
 
 -- can i make it so that garments and conditions stack up
 
-INSERT INTO garments
-  (garment_name, condition)
+INSERT INTO locations (location)
 VALUES
   ()
   -- get values from conditions table

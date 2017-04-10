@@ -1,21 +1,34 @@
 $(document).ready(function(){
 
+// get location from user db or sign in value
 
-// weather ajax, Get weather.data
+// let endpoint = 'http://api.openweathermap.org/data/2.5/weather?q=Miami&units=imperial&APPID=142c478807cfdf791bc211f12745a186';
+
   $.ajax({
      url: 'http://api.openweathermap.org/data/2.5/weather?q=Miami&units=imperial&APPID=142c478807cfdf791bc211f12745a186',
       method: 'Get',
       dataType: 'json',
-  }).success(function(data) {
+  }).success(function(data){
     console.log(data);
     let city = data.name;
     let temperature = data.main.temp;
-    // also get clouds and wind values, stor in variable
+    // pass data to
   })
 
 // make a function to pass weather.data to be used to query db
 // takes in data numeric value and change it to a value that corresponds to one of the weather conditions in our table
 
+// http://api.shopstyle.com/api/VERSION/METHOD_NAME?pid=uid3841-22532279-49&format=FORMAT&
+
+  $.ajax({
+      url: 'http://api.shopstyle.com/api/VERSION/METHOD_NAME?pid=uid3841-22532279-49&format=FORMAT&'
+      method: 'Get',
+      dataType: 'json',
+  }).success(function(data){
+    console.log(data);
+
+    // pass data to
+  })
 
 
 // return a random garment from that table
