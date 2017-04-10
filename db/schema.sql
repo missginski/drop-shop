@@ -1,5 +1,6 @@
 DROP TABLE if exists users CASCADE;
-DROP TABLE if exists locations CASCADE;
+DROP TABLE if exists weather CASCADE;
+DROP TABLE if exists garments CASCADE;
 
 CREATE TABLE users (
   id serial PRIMARY KEY,
@@ -9,10 +10,18 @@ CREATE TABLE users (
   location_id integer REFERENCES locations (id)
 );
 
-CREATE TABLE locations (
+CREATE TABLE weather (
   id serial PRIMARY KEY,
-  location text
+  name text,
+  description text
 );
+
+CREATE TABLE garments (
+  id serial PRIMARY KEY,
+  garment_name text,
+  weather_id integer REFERENCES weather (id)
+);
+
 
 
 

@@ -1,19 +1,26 @@
-INSERT INTO users (email, password_digest, email, location)
-VALUES ('Kristyn', 'Cornett', 'missginski@gmail.com', 'New York');
-
-INSERT INTO users (fname, lname, email, location)
+-- weather
+INSERT INTO weather
+  (name, description)
 VALUES
-('Andrew', 'Cornett', 'bmxposer@gmail.com' 'New York');
+  ('RAIN', 'Y or N'),
+  ('COLD', '44 and below'),
+  ('WARM', '45 to 84'),
+  ('HOT', '85 and up');
 
--- can i make it so that garments and conditions stack up
-
-INSERT INTO locations (location)
+-- garments
+INSERT INTO garments
+  (garment_name, weather_id)
 VALUES
-  ()
-  -- get values from conditions table
+  ('Rubber Ankle Boots', 1),
+  ('Rain Coat', 1),
+  ('Light Rain Coat', 1),
+  ('Puffy Coat', 2),
+  ('Tech-Friendly Gloves', 2),
+  ('Snow Boots,', 2),
+  ('Leather Jacket', 3),
+  ('Denim Jacket', 3),
+  ('Fingerless Gloves', 3),
+  ('Scarf', 3),
+  ('Flat Sandals', 4),
+  ('Sun Hat', 4);
 
-INSERT INTO conditions
-  (wind_cloud, nowind_nocloud, nowind_cloud, wind_nocloud)
-VALUES
-  ()
-  -- get values from weather API
