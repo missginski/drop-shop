@@ -4,10 +4,9 @@ DROP TABLE if exists garments CASCADE;
 
 CREATE TABLE users (
   id serial PRIMARY KEY,
-  email text,
+  email text UNIQUE,
   password_digest text,
-  name text,
-  location_id integer REFERENCES locations (id)
+  location text
 );
 
 CREATE TABLE weather (

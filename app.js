@@ -14,14 +14,33 @@ app.use("/", express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-let db = pgp('postgres://kristyn@localhost:5432/pindrop_db');
 
 app.listen(3000, function(req, res) {
   console.log('running...')
 })
 
+// req.session
+app.use(session({
+  secret: 'SHOEBILLZ',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}))
+
+let db = pgp('postgres://kristyn@localhost:5432/pindrop_db');
+
+
+// is someone logged in
 app.get("/", function(req, res) {
-  res.render('index');
+  if (req.session.user) {
+    let data = {
+      logged_in: true,
+      email: req.session.user.email
+    };
+    res.render('index', data);
+  } else {
+    res.render('index');
+  }
 });
 
 
