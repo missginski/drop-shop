@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  // let getWeather = function(){
+  let getWeather = function(){
     $.ajax({
       url: 'http://api.openweathermap.org/data/2.5/weather?q=Miami&units=imperial&APPID=142c478807cfdf791bc211f12745a186',
       method: 'GET',
@@ -9,14 +9,15 @@ $(document).ready(function(){
         let city = data.name;
         let temp = data.main.temp;
         let desc = data.weather[0].description;
-        let rain = data.weather[0].main;
-        // get rain?
+        let ifRain = data.weather[0].main;
         console.log(data, city, temp);
         $('.weather_today').text(`It's ${temp}F in ${city} with ${desc}`)
+        // pass temp and rain to conditional, to pass to pass it db
       }
     })
-  //} // end getWeather()
-  // getWeather()
+  } // ends getWeather
+  getWeather();
+
       // if (temp > 45 && temp < 80) {
       //   let temp_gauge = WARM;
       // } else if (temp_gauge > 81) {
@@ -24,6 +25,8 @@ $(document).ready(function(){
       // } else {
       //   let temp_gauge = COLD;
       // }
+
+// getProduct(garment_name) <--- pass in garment_name
 
   $.ajax({
     url: 'http://api.shopstyle.com/api/v2/products?pid=uid3841-22532279-49&format=JSON&fts=ankle+boots&offset=0&limit=1',
