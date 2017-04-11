@@ -15,9 +15,7 @@ app.use("/", express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.listen(3000, function(req, res) {
-  console.log('running...')
-})
+
 
 app.use(session({
   secret: 'SHOEBILLZ',
@@ -62,7 +60,7 @@ app.post('/signup', function(){
 });
 
 app.get('/login', function(req, res){
-  res.render('login/index');
+  res.render('index');
 });
 
 // store user info
@@ -75,14 +73,25 @@ app.post('/login', function(req, res){
   });
 });
 
+app.put('/user', function(req, res){
+  db.none('UPDATE users SET email = $1 WHERE email = $2',
+    [req.body.email, req.session.user.email])
+  .catch(function(){
+    res.send('Fail')
+    .then(function(){
+      res.send('Email Upate')
+    })
+  })
+})
+
+app.get('/logout', function(req,res){
+  req.session.user = false;
+  res.redirect('/')
+});
 
 
-
-
-
-
-
-
-
+app.listen(3000, function(req, res) {
+  console.log('running...')
+})
 
 
