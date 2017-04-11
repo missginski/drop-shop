@@ -1,0 +1,17 @@
+  body {
+    background-color: #b4eeb4;
+    font-family: 'Josefin Slab';
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    font-family: 'Josefin Sans';
+  }
+  .product {
+    background: white;
+    color: #000;
+    padding: 10px;
+    margin: auto;
+  }

@@ -18,11 +18,8 @@ CREATE TABLE weather (
 CREATE TABLE garments (
   id serial PRIMARY KEY,
   garment_name text,
+  api_param text,
   weather_id integer REFERENCES weather (id)
 );
-
-
-
-
 
 

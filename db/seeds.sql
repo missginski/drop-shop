@@ -2,25 +2,26 @@
 INSERT INTO weather
   (name, description)
 VALUES
-  ('RAIN', 'Y or N'),
   ('COLD', '44 and below'),
   ('WARM', '45 to 84'),
-  ('HOT', '85 and up');
+  ('HOT', '85 and up'),
+  ('RAIN', 'Y or N');
 
 -- garments
 INSERT INTO garments
-  (garment_name, weather_id)
+  (garment_name, api_param, weather_id)
 VALUES
-  ('Rubber Ankle Boots', 1),
-  ('Rain Coat', 1),
-  ('Light Rain Coat', 1),
-  ('Puffy Coat', 2),
-  ('Tech-Friendly Gloves', 2),
-  ('Snow Boots,', 2),
-  ('Leather Jacket', 3),
-  ('Denim Jacket', 3),
-  ('Fingerless Gloves', 3),
-  ('Scarf', 3),
-  ('Flat Sandals', 4),
-  ('Sun Hat', 4);
+  ('Puffy Coat', 'puffy+coat', 1),
+  ('Tech-Friendly Gloves', 'tech+gloves', 1),
+  ('Snow Boots,', 'snow+boots', 1),
+  ('Leather Jacket', 'leather+jacket', 2),
+  ('Denim Jacket', 'denim+jacket', 2),
+  ('Fingerless Gloves', 'fingerless+gloves', 2),
+  ('Scarf', 'scarf', 2),
+  ('Flat Sandals', 'flat+sandals', 3),
+  ('Tank Top', 'sun+hat', 3),
+  ('Aviators', 'aviators', 3),
+  ('Rubber Ankle Boots', 'rubber+ankle+boots', 4),
+  ('Rain Coat', 'rain+coat', 4),
+  ('Light Rain Coat', 'light+rain+coat', 4);
 
