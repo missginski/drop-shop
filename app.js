@@ -4,7 +4,6 @@ let mustacheExpress = require('mustache-express');
 let pgp = require('pg-promise')();
 let bodyParser = require('body-parser');
 let session = require('express-session');
-
 let bcrypt = require('bcrypt');
 let salt = bcrypt.genSalt(10);
 
@@ -15,10 +14,8 @@ app.use("/", express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
-
 app.use(session({
-  secret: 'SHOEBILLZ',
+  secret: 'Riverzs',
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false }
@@ -27,20 +24,20 @@ app.use(session({
 let db = pgp('postgres://kristyn@localhost:5432/pindrop_db');
 
 // is anyone logged in
-app.get("/", function(req, res) {
+app.get('/', function(req, res) {
   if (req.session.user) {
     let data = {
       logged_in: true,
       email: req.session.user.email
     };
     res.render('index', data);
-  } else {
-    res.render('index');
+  } else { // change back to index
+    res.render('login/user');
   }
 });
 
 // verify user and password
-app.post('/signup', function(){
+app.post('/signup', function(req, res){
   let data = req.body;
   db
   .one('SELECT * FROM users WHERE email = $1', [data.email])
@@ -60,7 +57,7 @@ app.post('/signup', function(){
 });
 
 app.get('/login', function(req, res){
-  res.render('index');
+  res.render('login/index');
 });
 
 // store user info
