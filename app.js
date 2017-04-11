@@ -4,6 +4,7 @@ let mustacheExpress = require('mustache-express');
 let pgp = require('pg-promise')();
 let bodyParser = require('body-parser');
 let session = require('express-session');
+
 let bcrypt = require('bcrypt');
 let salt = bcrypt.genSalt(10);
 
@@ -14,12 +15,10 @@ app.use("/", express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
 app.listen(3000, function(req, res) {
   console.log('running...')
 })
 
-// req.session
 app.use(session({
   secret: 'SHOEBILLZ',
   resave: false,
@@ -29,8 +28,7 @@ app.use(session({
 
 let db = pgp('postgres://kristyn@localhost:5432/pindrop_db');
 
-
-// is someone logged in
+// is anyone logged in
 app.get("/", function(req, res) {
   if (req.session.user) {
     let data = {
@@ -42,5 +40,49 @@ app.get("/", function(req, res) {
     res.render('index');
   }
 });
+
+// verify user and password
+app.post('/signup', function(){
+  let data = req.body;
+  db
+  .one('SELECT * FROM users WHERE email = $1', [data.email])
+  .catch(function(){
+    res.send('Invalid email or password')
+  })
+  .then(function(user){
+    bcrypt.compare(data.password, user.password_digest, function(err, cmp){
+      if (cmp) {
+        req.session.user = user;
+        res.redirect('/');
+      } else {
+        res.send('Invalid email or password')
+      }
+    });
+  });
+});
+
+app.get('/login', function(req, res){
+  res.render('login/index');
+});
+
+// store user info
+app.post('/login', function(req, res){
+  let data = req.body;
+  bcrypt.hash(data.password, 10, function(err, hash){
+    db.none('INSERT INTO users (email, password_digest, location) VALUES ($1, $2, $3)', [data.email, data.location, hash]).then(function(){
+      res.send('User Created!')
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
 
 
