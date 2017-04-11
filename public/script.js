@@ -6,8 +6,12 @@ $(document).ready(function(){
     dataType: 'json',
       success: function(data){
       let city = data.name;
-      let temperature = data.main.temp;
-      console.log(data, city, temperature);
+      let temp = data.main.temp;
+      // get rain?
+      console.log(data, city, temp);
+
+
+      $('.weather_today').text(`It's ${temp}F in ${city}`)
     }
   })
 
@@ -19,7 +23,7 @@ $(document).ready(function(){
   //     success: function(data){
   //     console.log(data);
   //     let city = data.name;
-  //     let temperature = data.main.temp;
+  //     let temp = data.main.temp;
   //   }
   // })
 
