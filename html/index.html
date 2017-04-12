@@ -13,19 +13,32 @@
 <body>
 <style>
   body {
-    background-color: #a8c3d4;
+    background-color: #e1e9b7;
     font-family: 'Josefin Slab';
-    color: #fff;
+    color: #9bbdc9;
     text-align: center;
+    margin: 0;
+    padding: 0;
   }
   h1 {
     font-size: 48px;
+
   }
+  p {
+    font-family: 'Josefin Sans';
+  }
+  .product {
+    background: white;
+    color: #000;
+    padding: 10px;
+    margin: auto;
+  }
+
 </style>
   <h1>Drop Shop</h1>
   <p></p>
   <p>Sign Up below for sweet updates</p>
-  <form action="/" method="POST">
+  <form action="/signup" method="POST">
     <label for="inputEmail">Email: </label>
       <input type="text" class="inputEmail" name="email" placeholder="Email">
       <br>
@@ -35,11 +48,10 @@
     <label for="inputLocation">Location: </label>
       <input type="text" class="location" name="location" placeholder="Location">
       <br>
-    <input type="submit" class="submit" value="Sign me up">
+    <input type="submit" class="submit" value="Sign up!">
   </form>
 
-  <p>If you've already signed up, <a href="/login/index.html">Log In!</a></p>
+  <p>If you've already signed up, <a href="/login">Log In!</a></p>
 
-<script src="/script.js"></script>
 </body>
 </html>

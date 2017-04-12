@@ -24,24 +24,26 @@ app.use(session({
 let db = pgp('postgres://kristyn@localhost:5432/pindrop_db');
 
 // is anyone logged in
-app.get('/', function(req, res) {
+app.get('/', function(req, res){
   if (req.session.user) {
     let data = {
       logged_in: true,
       email: req.session.user.email
     };
     res.render('index', data);
-  } else { // change back to index
-    res.render('login/user');
+  } else {
+    res.render('index');
   }
 });
 
 // verify user and password
-app.post('/signup', function(req, res){
+app.post('/login', function(req, res){
   let data = req.body;
+  console.log(req.body)
   db
   .one('SELECT * FROM users WHERE email = $1', [data.email])
   .catch(function(){
+    console.log('email')
     res.send('Invalid email or password')
   })
   .then(function(user){
@@ -50,14 +52,17 @@ app.post('/signup', function(req, res){
         req.session.user = user;
         res.redirect('/');
       } else {
+        console.log('becrypt')
         res.send('Invalid email or password')
+
       }
     });
   });
 });
 
+// Get garments by weather id
 app.get('/garments', function(req, res) {
-  let weather_id = req.query.weather_id; // 2
+  let weather_id = req.query.weather_id;
   db
   .any('SELECT * FROM garments WHERE weather_id = $1', [weather_id])
   .then(function(data) {
@@ -70,7 +75,7 @@ app.get('/login', function(req, res){
 });
 
 // store user info
-app.post('/login', function(req, res){
+app.post('/signup', function(req, res){
   let data = req.body;
   bcrypt.hash(data.password, 10, function(err, hash){
     db.none('INSERT INTO users (email, password_digest, location) VALUES ($1, $2, $3)', [data.email, data.location, hash]).then(function(){

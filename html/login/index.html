@@ -12,15 +12,33 @@
 <body>
 <style>
   body {
-    background-color: #dfb;
-    font-family: 'Georgia';
-    color: #fff;
+    background-color: #e1e9b7;
+    font-family: 'Josefin Slab';
+    color: #9bbdc9;
     text-align: center;
+    margin: 0;
+    padding: 0;
   }
+  h1 {
+    font-size: 48px;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  p {
+    font-family: 'Josefin Sans';
+  }
+  .product {
+    background: white;
+    color: #000;
+    padding: 10px;
+    margin: auto;
+  }
+
 </style>
-  <h1>Hi Bae, you look cute</h1>
-  <h3>Log in</h3>
-  <form action="/" method="POST">
+  <h1>Drop Shop</h1>
+  <h3>Log in here</h3>
+  <form action="/login" method="POST">
     <label for="inputEmail">Email </label>
       <input type="text" class="inputEmail" name="email" placeholder="Email">
       <br>
@@ -29,6 +47,5 @@
     <input type="submit" class="submit" value="Log In">
   </form>
 
-<script src="/script.js"></script>
 </body>
 </html>
