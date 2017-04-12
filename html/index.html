@@ -5,13 +5,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My Awesome Web App</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Raleway" rel="stylesheet">
-  <link src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
-</head>
-<body>
-<style>
+  <style>
   body {
     background-color: #e1e9b7;
     font-family: 'Josefin Slab';
@@ -27,6 +23,9 @@
   p {
     font-family: 'Josefin Sans';
   }
+  .top {
+    font-size: 20px;
+  }
   .product {
     background: white;
     color: #000;
@@ -35,23 +34,28 @@
   }
 
 </style>
+</head>
+<body>
+
   <h1>Drop Shop</h1>
-  <p></p>
-  <p>Sign Up below for sweet updates</p>
-  <form action="/signup" method="POST">
-    <label for="inputEmail">Email: </label>
-      <input type="text" class="inputEmail" name="email" placeholder="Email">
-      <br>
-    <label for="inputPassword">Password: </label>
-      <input type="password" name="password" placeholder="Password">
-      <br>
-    <label for="inputLocation">Location: </label>
+  <p class="top">Your weather compatable shopping companion</p>
+  <form action="/signup" method="POST" class="form-horizontal">
+    <div class="form-group">
+      <label for="inputEmail">Email </label>
+      <input type="text" id="inputEmail" name="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Password </label>
+      <input type="password"  name="password" id="inputPassword" placeholder="Password">
+      </div>
+    <div class="form-group">
+      <label for="inputLocation">Location </label>
       <input type="text" class="location" name="location" placeholder="Location">
-      <br>
-    <input type="submit" class="submit" value="Sign up!">
+    </div>
+    <input type="submit" class="btn btn-default" value="Sign up!">
   </form>
 
   <p>If you've already signed up, <a href="/login">Log In!</a></p>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>

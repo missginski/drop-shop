@@ -4,13 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My Awesome App</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab|Raleway" rel="stylesheet">
-  <link src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
-</head>
-<body>
-<style>
+  <style>
   body {
     background-color: #e1e9b7;
     font-family: 'Josefin Slab';
@@ -36,16 +32,24 @@
   }
 
 </style>
+</head>
+<body>
+
   <h1>Drop Shop</h1>
   <h3>Log in here</h3>
-  <form action="/login" method="POST">
-    <label for="inputEmail">Email </label>
+  <form action="/login" method="POST" class="form-horizontal">
+    <div class="form-group">
+      <label for="inputEmail">Email </label>
       <input type="text" class="inputEmail" name="email" placeholder="Email">
-      <br>
-    <label for="inputPassword">Password </label>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Password </label>
       <input type="password" name="password" placeholder="Password">
-    <input type="submit" class="submit" value="Log In">
+    <div class="form-group">
+      <input type="submit" class="btn btn-default" value="Log In">
+    </div>
   </form>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>

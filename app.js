@@ -30,7 +30,7 @@ app.get('/', function(req, res){
       logged_in: true,
       email: req.session.user.email
     };
-    res.render('index', data);
+    res.render('login/user', data);
   } else {
     res.render('index');
   }
@@ -52,7 +52,7 @@ app.post('/login', function(req, res){
         req.session.user = user;
         res.redirect('/');
       } else {
-        console.log('becrypt')
+        console.log('bcrypt')
         res.send('Invalid email or password')
 
       }
@@ -78,7 +78,7 @@ app.get('/login', function(req, res){
 app.post('/signup', function(req, res){
   let data = req.body;
   bcrypt.hash(data.password, 10, function(err, hash){
-    db.none('INSERT INTO users (email, password_digest, location) VALUES ($1, $2, $3)', [data.email, data.location, hash]).then(function(){
+    db.none('INSERT INTO users (email, location, password_digest) VALUES ($1, $2, $3)', [data.email, data.location, hash]).then(function(){
       res.send('User Created!')
     });
   });

@@ -36,13 +36,14 @@ $(document).ready(function(){
 
 
   let getProduct = function(weather_id){
-    let offset_input = (Math.floor(Math.random() * (1000 - 1)) + 1)
+    let offset_input = Math.floor(Math.random() * (1000 - 1)) + 1;
+    let weather_tag = Math.floor(Math.random() * (2 - 1)) + 1;
     $.ajax({
       url: `/garments/?weather_id=${weather_id}`,
       method: 'GET',
       dataType: 'json',
       success: function(data) {
-        let api_input = data[0].api_param; // or random?
+        let api_input = data[weather_tag].api_param; // or random?
         $.ajax({
           url: `http://api.shopstyle.com/api/v2/products?pid=uid3841-22532279-49&format=JSON&fts=${api_input}&offset=${offset_input}&limit=1`,
           method: 'GET',
@@ -60,7 +61,7 @@ $(document).ready(function(){
               $('p.title').text(title)
               $('.display').attr('src', product_img);
               $('.price').text(price);
-              $('form').attr('action', click_url);
+              $('.get_shop').attr('href', click_url);
           }
         })
       }
