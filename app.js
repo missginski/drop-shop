@@ -56,6 +56,15 @@ app.post('/signup', function(req, res){
   });
 });
 
+app.get('/garments', function(req, res) {
+  let weather_id = req.query.weather_id; // 2
+  db
+  .any('SELECT * FROM garments WHERE weather_id = $1', [weather_id])
+  .then(function(data) {
+    res.send(data);
+  });
+})
+
 app.get('/login', function(req, res){
   res.render('login/index');
 });
