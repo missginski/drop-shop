@@ -39,11 +39,9 @@ app.get('/', function(req, res){
 // verify user and password
 app.post('/login', function(req, res){
   let data = req.body;
-  console.log(req.body)
   db
   .one('SELECT * FROM users WHERE email = $1', [data.email])
   .catch(function(){
-    console.log('email')
     res.send('Invalid email or password')
   })
   .then(function(user){
@@ -52,9 +50,7 @@ app.post('/login', function(req, res){
         req.session.user = user;
         res.redirect('/');
       } else {
-        console.log('bcrypt')
         res.send('Invalid email or password')
-
       }
     });
   });
@@ -62,6 +58,7 @@ app.post('/login', function(req, res){
 
 // Get garments by weather id
 app.get('/garments', function(req, res) {
+  // Got help with this
   let weather_id = req.query.weather_id;
   db
   .any('SELECT * FROM garments WHERE weather_id = $1', [weather_id])
@@ -79,21 +76,10 @@ app.post('/signup', function(req, res){
   let data = req.body;
   bcrypt.hash(data.password, 10, function(err, hash){
     db.none('INSERT INTO users (email, location, password_digest) VALUES ($1, $2, $3)', [data.email, data.location, hash]).then(function(){
-      res.send('User Created!')
+      res.send('Success!')
     });
   });
 });
-
-app.put('/user', function(req, res){
-  db.none('UPDATE users SET email = $1 WHERE email = $2',
-    [req.body.email, req.session.user.email])
-  .catch(function(){
-    res.send('Fail')
-    .then(function(){
-      res.send('Email Upate')
-    })
-  })
-})
 
 app.get('/logout', function(req,res){
   req.session.user = false;

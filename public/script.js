@@ -5,7 +5,7 @@ $(document).ready(function(){
     let input = 'New York';
 
     $.ajax({
-      url: `http://api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&APPID=142c478807cfdf791bc211f12745a186`,
+      url: `http://api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&APPID=<APPID>`,
       method: 'GET',
       dataType: 'json',
       success: function(data){
@@ -34,18 +34,18 @@ $(document).ready(function(){
   } // ends getWeather
   getWeather()
 
-
   let getProduct = function(weather_id){
-    let offset_input = Math.floor(Math.random() * (1000 - 1)) + 1;
     let weather_tag = Math.floor(Math.random() * (2 - 1)) + 1;
+    // Got help with this. getWeather() is on the front end, i needed to get to the backend in order to get garments from the db and pass them to the shopping API
     $.ajax({
       url: `/garments/?weather_id=${weather_id}`,
       method: 'GET',
       dataType: 'json',
       success: function(data) {
-        let api_input = data[weather_tag].api_param; // or random?
+        let api_input = data[weather_tag].api_param;
+        let offset_input = Math.floor(Math.random() * (1000 - 1)) + 1;
         $.ajax({
-          url: `http://api.shopstyle.com/api/v2/products?pid=uid3841-22532279-49&format=JSON&fts=${api_input}&offset=${offset_input}&limit=1`,
+          url: `http://api.shopstyle.com/api/v2/products?pid=<APPID>&format=JSON&fts=${api_input}&offset=${offset_input}&limit=1`,
           method: 'GET',
           dataType: 'json',
             success: function(data){
@@ -69,7 +69,7 @@ $(document).ready(function(){
   }
 
 
-}); //
+}); // ends document ready
 
 
 

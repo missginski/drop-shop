@@ -1,0 +1,4 @@
+http://api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&APPID=142c478807cfdf791bc211f12745a186
+
+
+http://api.shopstyle.com/api/v2/products?pid=uid3841-22532279-49&format=JSON&fts=${api_input}&offset=${offset_input}&limit=1

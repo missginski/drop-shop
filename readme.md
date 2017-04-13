@@ -1,9 +1,5 @@
-# This is Drop Shop.
+Drop Shop is a weather dependent shopping companion. 
 
-Ever wanted to make shopping easier? Now you can finally shop according to the weather!
+Sign up by entering email, password, and location. Log in to view current weather at your saved location, along with a recommended garment to focus your outfit for the day. 
 
-Drop Shop uses up-to-the-minute weather , you get access to live weather updates 24/7. We store you location.
 
-A user signs up by entering their email, password, and location. Update location at any time.
-
-User page shows current weather report based on location. 
