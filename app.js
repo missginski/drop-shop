@@ -23,6 +23,7 @@ app.use(session({
 
 let db = pgp('postgres://kristyn@localhost:5432/pindrop_db');
 
+
 // is anyone logged in
 app.get('/', function(req, res){
   if (req.session.user) {
@@ -35,6 +36,7 @@ app.get('/', function(req, res){
     res.render('index');
   }
 });
+
 
 // verify user and password
 app.post('/login', function(req, res){
@@ -56,9 +58,9 @@ app.post('/login', function(req, res){
   });
 });
 
+
 // Get garments by weather id
 app.get('/garments', function(req, res) {
-  // Got help with this
   let weather_id = req.query.weather_id;
   db
   .any('SELECT * FROM garments WHERE weather_id = $1', [weather_id])
@@ -70,6 +72,7 @@ app.get('/garments', function(req, res) {
 app.get('/login', function(req, res){
   res.render('login/index');
 });
+
 
 // store user info
 app.post('/signup', function(req, res){
@@ -90,5 +93,3 @@ app.get('/logout', function(req,res){
 app.listen(3000, function(req, res) {
   console.log('running...')
 })
-
-
