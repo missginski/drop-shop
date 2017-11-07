@@ -1,15 +1,25 @@
   body {
-    background-color: #e1e9b7;
+    background-color: #D0FDE4;
     font-family: 'Josefin Slab';
     color: #2F2F2F;
     text-align: center;
     margin: 0;
     padding: 0;
   }
+
   p {
     font-family: 'Josefin Sans';
     font-size: 18px;
   }
+
+  .form_wrapper {
+    margin-top: 150px;
+  }
+
+  .my_form {
+    width: 300px;
+  }
+
   .product {
     background: white;
     color: #000;
@@ -17,9 +27,7 @@
     margin: auto;
   }
 
-  .my_form {
-    width: 300px;
-  }
+
 
 
 
