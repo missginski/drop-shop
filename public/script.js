@@ -17,11 +17,17 @@ $(document).ready(function(){
         let city = data.name;
         let temp = Math.round(data.main.temp);
         let desc = data.weather[0].description;
-        let ifRain = data.weather[0].main;
-        console.log(city, temp, desc, data);
-        $('.location').text(`${city}`)
-        $('.weather_today').text(`${temp}°F`)
-        $('.summary').text(`${desc}`)
+        let mainDesc = data.weather[0].main;
+        let maxTemp = data.main.max_temp;
+        let minTemp = data.main.min_temp;
+        console.log(data);
+
+        $('.location').text(`${city}`);
+        $('.main_desc').text(`${mainDesc}`);
+        $('.weather_today').text(`${temp}°F`);
+        $('.summary').text(`${desc}`);
+        $('.temp_max').text(`High: ${maxTemp}`);
+        $('.temp_min').text(`Low: ${minTemp}`);
 
         var weather_id;
         if (temp > 45 && temp < 80) {
