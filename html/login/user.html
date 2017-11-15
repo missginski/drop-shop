@@ -13,31 +13,57 @@
 </head>
 <body>
 
+<div class="my-container">
 
-<!-- <h1>It's nice out today</h1> -->
 
-  <h1 class="weather_today"></h1>
-  <p class="garment_today"></p>
-
-  <div class="product">
-    <p>Why not try this out?!</p>
-    <h2 class="brand"></h2>
-    <p class="title"></p>
-    <img class="display">
-    <p class="price"></p>
-    <form>
-    <button class="btn" type="submit"><a class="get_shop">Get it!</a></button>
-    </form>
+  <div class="navbar row">
+    <div class="container">
+      <p class="one-half column greeting">Welcome back, Kayla!<p>
+      <div class="one-half column nav-links">
+        <a href="#" class="nav-item">Change Location</a>
+        <a href="/logout" class="nav-item">Logout</a>    
+      </div>
+    </div>
   </div>
 
 
-  <a href="/logout">Logout</a> or <a href="#">Change Location</a>
+  <div class="row">
+
+    <div class="weather_wrapper one-half column">
+      <p class="location"></p>
+      <h1 class="weather_today"></h1>
+      <p class="summary"></p>
+      <p class="range"></p>
+
+    </div>
+
+    <p class="garment_today"></p>
+
+
+    <div class="product one-half column">
+      <p>Why not try this out?!</p>
+      <h2 class="brand"></h2>
+      <p class="title"></p>
+      <img class="display">
+      <p class="price"></p>
+      <form>
+      <button class="btn" type="submit"><a class="get_shop">Get it!</a></button>
+      </form>
+    </div>
+
+  </div>
+
+
+
+
+
+
+</div>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- <script type='text/javascript' src='config.js'></script> -->
   <script src="/script.js"></script>
-
-
 
 
 </body>

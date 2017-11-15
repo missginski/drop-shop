@@ -1,3 +1,8 @@
+// let weatherKey = config.WEATHER_KEY;
+// let shopKey = config.SHOP_KEY;
+
+
+
 $(document).ready(function(){
 
 // input = location from db
@@ -5,16 +10,18 @@ $(document).ready(function(){
     let input = 'New York';
 
     $.ajax({
-      url: `http://api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&APPID=`,
+      url: `http://api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&APPID=142c478807cfdf791bc211f12745a186` ,
       method: 'GET',
       dataType: 'json',
       success: function(data){
         let city = data.name;
-        let temp = data.main.temp;
+        let temp = Math.round(data.main.temp);
         let desc = data.weather[0].description;
         let ifRain = data.weather[0].main;
-        console.log(city, temp, desc);
-        $('.weather_today').text(`It's ${temp}°F in ${city}, with ${desc}`)
+        console.log(city, temp, desc, data);
+        $('.location').text(`${city}`)
+        $('.weather_today').text(`${temp}°F`)
+        $('.summary').text(`${desc}`)
 
         var weather_id;
         if (temp > 45 && temp < 80) {
@@ -24,7 +31,6 @@ $(document).ready(function(){
         } else {
           weather_id = 1;
         }
-
         getProduct(weather_id);
       }
     })
@@ -43,7 +49,8 @@ $(document).ready(function(){
         let api_input = data[weather_tag].api_param;
         let offset_input = Math.floor(Math.random() * (1000 - 1)) + 1;
         $.ajax({
-          url: `http://api.shopstyle.com/api/v2/products?pid=`,
+          url: `http://api.shopstyle.com/api/v2/products?pid=<<APPID>>&format=JSON&fts=${api_input}&offset=${offset_input}&limit=1
+`,
           method: 'GET',
           dataType: 'json',
             success: function(data){
