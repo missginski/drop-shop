@@ -11,28 +11,33 @@ p {
   font-size: 18px;
 }
 
+a {
+  color: #F9F9F9;
+}
+
+.navbar {
+  background: #7AC1AD;
+}
+
+.nav-item {
+
+}
+
 .form_wrapper {
   margin-top: 150px;
   text-align: center;
 }
 
 .my_form {
+  font-family: sans-serif;
   width: 300px;
 }
 
 .product {
   background: #F9F9F9;
-  color: #000;
+  color: #2F2F2F;
   padding: 10px;
   margin: auto;
 }
 
 /******** User Page ********/
-
-.navbar {
-  background: #7AC1AD;
-  /*font-family: 'Montserrat';
-  margin: 0;
-  padding: 5px;
-  border-radius: 0;*/
-}
