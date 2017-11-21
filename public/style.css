@@ -19,8 +19,8 @@ a {
   background: #7AC1AD;
 }
 
-.nav-item {
-
+.my-link {
+  padding-left: 15px;
 }
 
 .form_wrapper {

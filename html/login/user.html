@@ -3,36 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My Awesome App</title>
+  <title>Dropshop</title>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-
     <div class="navbar-header">
       <a href="/" class="navbar-brand nav-item">Dropshop</a>
     </div>
-
     <ul class="nav navbar-nav">
-      <li><a href="#">Change Location</a></li>
-      <li><a href="/logout">Logout</a></li>
+      <li>
+        <a href="#" class="my-link">Change Location</a>
+        <a href="/logout" class="my-link">Logout</a>
+      </li>
     </ul>
-
   </div>
 </nav>
-
-
 
 
 <div class="container-fluid">
   <div class="row">
 
-    <div class="weather_wrapper col-md-6">
+    <div class="weather_wrapper col-md-7">
       <div class="container">
         <h1 class="location"></h1>
         <p class="summary"></p>
@@ -45,14 +41,14 @@
     <p class="garment_today"></p>
 
 
-    <div class="product col-md-6">
-      <p>Why not try this out?!</p>
-      <h2 class="brand"></h2>
+    <div class="product col-md-5">
+      <!-- <p>Why not try this out?!</p>
+      <h2 class="brand"></h2> -->
       <p class="title"></p>
       <img class="display">
-      <p class="price"></p>
+      <!-- <p class="price"></p> -->
       <form>
-      <button class="btn btn-default" type="submit"><a class="get_shop">Shop this Look</a></button>
+        <button class="btn btn-default" type="submit"><a class="get_shop">Shop this Look</a></button>
       </form>
     </div>
 

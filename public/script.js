@@ -18,8 +18,8 @@ $(document).ready(function(){
         let desc = data.weather[0].description;
         let ifRain = data.weather[0].main;
         let icon = data.weather[0].icon;
-        let maxTemp = data.main.temp_max;
-        let minTemp = data.main.temp_min;
+        let maxTemp = Math.round(data.main.temp_max);
+        let minTemp = Math.round(data.main.temp_min);
         let pressure = data.main.pressure;
         let humidity = data.main.humidity;
         console.log(data, ifRain, icon, pressure, humidity);
@@ -56,23 +56,23 @@ $(document).ready(function(){
         let api_input = data[weather_tag].api_param;
         let offset_input = Math.floor(Math.random() * (1000 - 1)) + 1;
         $.ajax({
-          url: `http://api.shopstyle.com/api/v2/products?pid=${shopKey}&format=JSON&fts=${api_input}&offset=${offset_input}&limit=1
+          url: `http://api.shopstyle.com/api/v2/products?pid=${shopKey}&format=JSON&fts=leather+jacket&offset=${offset_input}&limit=1
 `,
           method: 'GET',
           dataType: 'json',
             success: function(data){
-              let product_name = data.products[0].brand.name;
-              let title = data.products[0].unbrandedName;
+              // let product_name = data.products[0].brand.name;
+              // let title = data.products[0].unbrandedName;
               let click_url = data.products[0].clickUrl;
-              let price = data.products[0].priceLabel;
-              let product_img = data.products[0].image.sizes.Large.url;
-              console.log(data, product_name, product_img, click_url, price);
+              // let price = data.products[0].priceLabel;
+              let product_img = data.products[0].image.sizes.Best.url;
+              console.log(data);
 
-              $('.garment_today').text()
-              $('h2.brand').text(product_name);
-              $('p.title').text(title)
+              // $('.garment_today').text()
+              // $('h2.brand').text(product_name);
+              // $('p.title').text(title)
               $('.display').attr('src', product_img);
-              $('.price').text(price);
+              // $('.price').text(price);
               $('.get_shop').attr('href', click_url);
           }
         })
