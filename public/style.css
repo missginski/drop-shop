@@ -1,5 +1,5 @@
 body {
-  background-color: #F9F9F9;
+  /*background-color: #F9F9F9;*/
   font-family: 'Montserrat';
   color: #2F2F2F;
   margin: 0;
@@ -34,10 +34,15 @@ a {
 }
 
 .product {
-  background: #F9F9F9;
+  /*background: #F9F9F9;*/
   color: #2F2F2F;
   padding: 10px;
   margin: auto;
+  text-align: center;
+}
+
+.btn-default {
+  background: #F1969B;
 }
 
 /******** User Page ********/

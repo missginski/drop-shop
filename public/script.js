@@ -24,11 +24,11 @@ $(document).ready(function(){
         let humidity = data.main.humidity;
         console.log(data, ifRain, icon, pressure, humidity);
 
-        $('.location').text(`${city}`);
+        $('.location').text(city);
         $('.weather_today').text(`${temp}°F`);
-        $('.summary').text(`${desc}`);
-        $('.temp_max').text(`High: ${maxTemp}`);
-        $('.temp_min').text(`Low: ${minTemp}`);
+        $('.summary').text(desc);
+        $('.temp_max').text(maxTemp);
+        $('.temp_min').text(minTemp);
 
         var weather_id;
         if (temp > 45 && temp < 80) {
@@ -56,7 +56,7 @@ $(document).ready(function(){
         let api_input = data[weather_tag].api_param;
         let offset_input = Math.floor(Math.random() * (1000 - 1)) + 1;
         $.ajax({
-          url: `http://api.shopstyle.com/api/v2/products?pid=${shopKey}&format=JSON&fts=leather+jacket&offset=${offset_input}&limit=1
+          url: `http://api.shopstyle.com/api/v2/products?pid=${shopKey}&format=JSON&fts=${api_input}&offset=${offset_input}&limit=1
 `,
           method: 'GET',
           dataType: 'json',
