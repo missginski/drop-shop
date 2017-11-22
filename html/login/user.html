@@ -25,35 +25,37 @@
 </nav>
 
 
-<div class="container">
+<div class="container my-container">
   <div class="row">
-    <div class="weather-wrapper col-md-6">
-      <div class="container">
+    <div class="weather-wrapper col-md-5">
 
+      <div class="container">
         <h1 class="location"></h1>
         <p class="summary"></p>
-        <h1><span class="weather_today"></span>°F</h1>
-        <p class="max_min">Hi: <span class="temp_max"></span> -- Lo: <span class="temp_min"></span></p>
+        <h2><span class="weather_today"></span>°F</h2>
+        <p class="max_min">hi: <span class="temp_max"></span> -- lo: <span class="temp_min"></span></p>
       <div class="row">
-        <div class="col-sm-6">
-          <h4 class="weather-props wind-prop">Windspeed</h4>
-          <p><span class="wind"></span> mph</p>
+
+        <div class="col-sm-6 wind-prop">
+          <h4 class="weather-props">Windspeed</h4>
+          <p class="prop-info"><span class="wind"></span> mph</p>
         </div>
+
         <div class="col-sm-6">
           <h4 class="weather-props">Humidity</h4>
-          <p><span class="humidity"></p>
+          <p class="prop-info"><span class="humidity"></span>%</p>
         </div>
 
       </div>
-
       </div>
     </div>
 
 
-    <div class="product col-md-6">
+    <div class="product col-md-7">
       <p class="title"></p>
       <img class="display_img">
       <form>
+        <!-- <button class="btn btn-default" type="submit"><a href="#">Get another Look</a></button> -->
         <button class="btn btn-default" type="submit"><a class="get_shop">Shop this Look</a></button>
       </form>
     </div>

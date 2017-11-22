@@ -47,22 +47,25 @@ a {
 /******** User Page ********/
 
 .weather-wrapper {
+  margin-top: 75px;
   padding-top: 50px;
+  text-align: center;
+  border: 1px solid #CED4DA;
 }
 
 .weather_today {
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .summary {
-  font-size: 24px;
-  padding-left: 100px;
+  font-size: 28px;
 }
 
 .max_min {
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   border-bottom: 1px solid #CED4DA;
+  padding-bottom: 20px;
 }
 
 .display_img {
@@ -70,11 +73,20 @@ a {
   margin-bottom: 25px;
 }
 
-.weather-props {
+.weather-props, .prop-info {
   text-align: center;
-  font-size: 28px;
+  font-size: 16px;
+  padding: 0;
+}
+
+.weather-props {
+  padding-top: 10px;
 }
 
 .wind-prop {
   border-right: 1px solid #CED4DA;
+}
+
+.my-container {
+  background: #FFFFFF;
 }
