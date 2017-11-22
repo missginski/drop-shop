@@ -25,33 +25,45 @@
 </nav>
 
 
+<div class="container">
+  <div class="row">
+    <div class="weather-wrapper col-md-6">
+      <div class="container">
 
-<div class="user-container">
-  <div class="container">
-    <div class="row">
-
-      <div class="product col-md-5">
-        <p class="title"></p>
-        <img class="display">
-        <form>
-          <button class="btn btn-default" type="submit"><a class="get_shop">Shop this Look</a></button>
-        </form>
-      </div>
-
-
-      <div class="container col-md-7">
-        <div class="weather-wrapper">
-          <h1 class="location"></h1>
-          <p class="summary"></p>
-          <h3 class="weather_today"></h3>
-          <p>Hi: <span class="temp_max"></span> -- Lo: <span class="temp_min"></span></p>
+        <h1 class="location"></h1>
+        <p class="summary"></p>
+        <h1><span class="weather_today"></span>°F</h1>
+        <p class="max_min">Hi: <span class="temp_max"></span> -- Lo: <span class="temp_min"></span></p>
+      <div class="row">
+        <div class="col-sm-6">
+          <h4 class="weather-props wind-prop">Windspeed</h4>
+          <p><span class="wind"></span> mph</p>
         </div>
+        <div class="col-sm-6">
+          <h4 class="weather-props">Humidity</h4>
+          <p><span class="humidity"></p>
+        </div>
+
       </div>
 
-
+      </div>
     </div>
 
+
+    <div class="product col-md-6">
+      <p class="title"></p>
+      <img class="display_img">
+      <form>
+        <button class="btn btn-default" type="submit"><a class="get_shop">Shop this Look</a></button>
+      </form>
+    </div>
+
+
+
+
+
   </div>
+
 </div>
 
 

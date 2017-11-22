@@ -22,13 +22,16 @@ $(document).ready(function(){
         let minTemp = Math.round(data.main.temp_min);
         let pressure = data.main.pressure;
         let humidity = data.main.humidity;
+        let wind = data.wind.speed;
         console.log(data, ifRain, icon, pressure, humidity);
 
         $('.location').text(city);
-        $('.weather_today').text(`${temp}°F`);
+        $('.weather_today').text(temp);
         $('.summary').text(desc);
         $('.temp_max').text(maxTemp);
         $('.temp_min').text(minTemp);
+        $('.wind').text(wind);
+        $('.humidity').text(humidity);
 
         var weather_id;
         if (temp > 45 && temp < 80) {
@@ -71,7 +74,7 @@ $(document).ready(function(){
               // $('.garment_today').text()
               // $('h2.brand').text(product_name);
               // $('p.title').text(title)
-              $('.display').attr('src', product_img);
+              $('.display_img').attr('src', product_img);
               // $('.price').text(price);
               $('.get_shop').attr('href', click_url);
           }

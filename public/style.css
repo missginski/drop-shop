@@ -1,5 +1,4 @@
 body {
-  /*background-color: #F9F9F9;*/
   font-family: 'Montserrat';
   color: #2F2F2F;
   margin: 0;
@@ -42,7 +41,40 @@ a {
 }
 
 .btn-default {
-  background: #F1969B;
+  background: #7AC1AD;
 }
 
 /******** User Page ********/
+
+.weather-wrapper {
+  padding-top: 50px;
+}
+
+.weather_today {
+  font-size: 2em;
+}
+
+.summary {
+  font-size: 24px;
+  padding-left: 100px;
+}
+
+.max_min {
+  font-size: 24px;
+  text-align: center;
+  border-bottom: 1px solid #CED4DA;
+}
+
+.display_img {
+  width: 300px;
+  margin-bottom: 25px;
+}
+
+.weather-props {
+  text-align: center;
+  font-size: 28px;
+}
+
+.wind-prop {
+  border-right: 1px solid #CED4DA;
+}
